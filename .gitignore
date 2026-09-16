@@ -1,0 +1,9 @@
+.DS_Store
+*~
+
+# Локальные данные Olist не загружаются в репозиторий.
+data/*
+!data/.gitkeep
+!data/olist/
+data/olist/*
+!data/olist/.gitkeep
