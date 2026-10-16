@@ -14,6 +14,7 @@ JOIN olist.order_items AS oi ON oi.order_id = o.order_id
 WHERE c.customer_state = 'PA'
   AND o.order_status = 'delivered';
 
+-- Исходная выборка B для штата AM с повторениями.
 CREATE TEMP VIEW lab02_b_rows AS
 SELECT oi.product_id
 FROM olist.customers AS c
@@ -27,6 +28,7 @@ CREATE TEMP VIEW lab02_a AS
 SELECT DISTINCT product_id
 FROM lab02_a_rows;
 
+-- Множество B без повторяющихся товаров.
 CREATE TEMP VIEW lab02_b AS
 SELECT DISTINCT product_id
 FROM lab02_b_rows;
